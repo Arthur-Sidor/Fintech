@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <div class="container p-4">
+        <h2 class="text-center mb-4">Perfil do Usuário</h2>
+
+        <!-- Informações Pessoais -->
+        <div class="section mb-4">
+            <h4>Informações Pessoais</h4>
+            <form id="personal-info-form">
+                <div class="form-group">
+                    <label>Nome Completo:</label>
+                    <input type="text" class="form-control" name="nome" value="Arthur Silva" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Endereço Residencial:</label>
+                    <input type="text" class="form-control" name="endereco" value="Rua das Flores, 123" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Número de Telefone:</label>
+                    <input type="text" class="form-control" name="telefone" value="(11) 91234-5678" readonly>
+                </div>
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="email" class="form-control" name="email" value="arthur.silva@email.com" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Data de Nascimento:</label>
+                    <input type="date" class="form-control" name="dataNascimento" value="1995-06-15" readonly>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Dados da Conta -->
+        <div class="section mb-4">
+            <h4>Dados da Conta</h4>
+            <form id="account-info-form">
+                <div class="form-group">
+                    <label>Número da Conta:</label>
+                    <input type="text" class="form-control" value="123456-7" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de Conta:</label>
+                    <input type="text" class="form-control" value="Corrente" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Agência Bancária:</label>
+                    <input type="text" class="form-control" value="001" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Saldo Atual:</label>
+                    <input type="text" class="form-control" value="R$ 3.010,00" readonly>
+                </div>
+            </form>
+        </div>
+
+        <!-- Configurações de Segurança -->
+        <div class="section mb-4">
+            <h4>Configurações de Segurança</h4>
+            <form id="security-settings-form">
+                <button type="button" class="btn btn-warning">Alterar Senha</button>
+                <button type="button" class="btn btn-warning">Configurar 2FA</button>
+                <button type="button" class="btn btn-warning">Perguntas de Segurança</button>
+            </form>
+        </div>
+        
+        <!-- Preferências do Usuário -->
+        <div class="section mb-4">
+            <h4>Preferências do Usuário</h4>
+            <form id="user-preferences-form">
+                <div class="form-group">
+                    <label>Idioma Preferido:</label>
+                    <input type="text" class="form-control" value="Português" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Notificações:</label>
+                    <input type="text" class="form-control" value="E-mail e SMS" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Preferências de Privacidade:</label>
+                    <input type="text" class="form-control" value="Privado" readonly>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Suporte e Ajuda -->
+        <div class="section mb-4">
+            <h4>Suporte e Ajuda</h4>
+            <button type="button" class="btn btn-success">Chat ao Vivo</button>
+            <button type="button" class="btn btn-info">FAQ</button>
+            <button type="button" class="btn btn-primary">Contatos do Banco</button>
+        </div>
+    </div>
+</body>
+</html>

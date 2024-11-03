@@ -1,16 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     background-color: #000;
     /* Fundo preto */
     color: #fff;
     /* Texto branco */
+    font-family: "Montserrat", sans-serif;
 }
 
 .header {
     background-color: #28a745;
     /* Verde */
     color: white;
-    padding: 15px;
+    padding: 1em;
     border-radius: 5px;
+}
+
+.user-info {
+    padding: 1em;
 }
 
 .avatar {
@@ -35,7 +42,20 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     /* Sombra */
+    margin: 10vmin 0vmin 10vmin 0vmin
 }
+
+.form-control {
+    box-shadow: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 
 .card-item {
     display: flex;
@@ -53,6 +73,10 @@ body {
     height: 30px;
     margin-right: 10px;
     font-size: 24px;
+}
+
+.bg-success {
+    background-color: #E0F7E7;
 }
 
 .bottom-menu {
@@ -86,4 +110,8 @@ body {
     /* Verde */
     color: white;
     border-radius: 50
+}
+
+.add {
+    cursor: pointer;
 }

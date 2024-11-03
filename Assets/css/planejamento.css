@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     background-color: #000; /* Fundo preto */
     color: #fff; /* Texto branco */
-    font-family: 'Arial', sans-serif; /* Tipografia */
+    font-family: "Montserrat", sans-serif;
 }
 
 .container-fluid {
@@ -9,8 +11,9 @@ body {
 }
 
 .goal-definition {
-    padding: 20px; /* Espaçamento interno */
+    padding: 2.5vmin; /* Espaçamento interno */
     background-color: #2c2c2c; /* Fundo escuro */
+    border-radius: 1vmin;
 }
 
 #goals-list {
@@ -18,8 +21,8 @@ body {
 }
 
 .goal-item {
-    margin: 10px 0;
-    padding: 10px; /* Espaçamento interno */
+    margin: 1vmin 0;
+    padding: 3vmin; /* Espaçamento interno */
     background-color: #1c1c1c; /* Fundo escuro */
     border-radius: 8px; /* Cantos arredondados */
 }
@@ -29,8 +32,9 @@ body {
 }
 
 .performance-chart {
-    padding: 20px; /* Espaçamento interno */
+    padding: 2vmin; /* Espaçamento interno */
     background-color: #1c1c1c; /* Fundo escuro */
+    border-radius: 1vmin;
 }
 .bottom-menu {
     height: 65px;
