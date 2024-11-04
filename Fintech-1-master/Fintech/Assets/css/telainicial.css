@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #000;
+    /* Fundo preto */
+    color: #fff;
+    /* Texto branco */
+    font-family: "Montserrat", sans-serif;
+}
+
+.header {
+    background-color: #28a745;
+    /* Verde */
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.user-info {
+    padding: 1em;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    /* Fundo branco para o avatar */
+    color: #28a745;
+    /* Texto verde para o avatar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.financial-overview,
+.my-cards {
+    background-color: #1c1c1c;
+    /* Fundo escuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Sombra */
+    margin: 10vmin 0vmin 10vmin 0vmin
+}
+
+.form-control {
+    box-shadow: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.card-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #28a745;
+    /* Verde */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(11, 1, 1, 0.897);
+}
+
+.card-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.bg-success {
+    background-color: #E0F7E7;
+}
+
+.bottom-menu {
+    height: 60px; /* Altura do menu */
+    position: fixed; /* Mantém o menu na parte inferior */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background-color: #28a745; /* Fundo verde */
+    display: flex; /* Flexbox para menu */
+    justify-content: space-around; /* Espaçamento entre itens */
+}
+
+.menu-item {
+    flex: 1; /* Faz o item do menu ocupar espaço igual */
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.menu-item i {
+    font-size: 24px; /* Tamanho dos ícones */
+}
+
+.add-transaction-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    background-color: #28a745;
+    /* Verde */
+    color: white;
+    border-radius: 50
+}
+
+.add {
+    cursor: pointer;
+}

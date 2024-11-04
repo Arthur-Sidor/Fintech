@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/css/perfil.css"> <!-- Link para o CSS separado -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container p-4">
+        <h2 class="text-center mb-4">Perfil do Usuário</h2>
+
+        <!-- Informações Pessoais -->
+        <div class="section mb-4">
+            <h4>Informações Pessoais</h4>
+            <form id="personal-info-form">
+                <div class="form-group">
+                    <label>Nome Completo:</label>
+                    <input type="text" class="form-control" name="nome" value="Arthur Silva" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Endereço Residencial:</label>
+                    <input type="text" class="form-control" name="endereco" value="Rua das Flores, 123" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Número de Telefone:</label>
+                    <input type="text" class="form-control" name="telefone" value="(11) 91234-5678" readonly>
+                </div>
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="email" class="form-control" name="email" value="arthur.silva@email.com" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Data de Nascimento:</label>
+                    <input type="date" class="form-control" name="dataNascimento" value="1995-06-15" readonly>
+                </div>
+                <button type="button" class="btn btn-primary" id="edit-personal-info">Editar</button>
+            </form>
+        </div>
+
+        <!-- Configurações de Segurança -->
+        <div class="section mb-4">
+            <h4>Configurações de Segurança</h4>
+            <form id="security-settings-form">
+                <button type="button" class="btn btn-warning" onclick="alert('Redirecionando para alteração de senha...')">Alterar Senha</button>
+                <button type="button" class="btn btn-warning" onclick="alert('Configurando 2FA...')">Configurar 2FA</button>
+                <button type="button" class="btn btn-warning" onclick="alert('Redirecionando para perguntas de segurança...')">Perguntas de Segurança</button>
+            </form>
+        </div>
+        
+        <!-- Preferências do Usuário -->
+        <div class="section mb-4">
+            <h4>Preferências do Usuário</h4>
+            <form id="user-preferences-form">
+                <div class="form-group">
+                    <label>Idioma Preferido:</label>
+                    <input type="text" class="form-control" value="Português" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Notificações:</label>
+                    <input type="text" class="form-control" value="E-mail e SMS" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Preferências de Privacidade:</label>
+                    <input type="text" class="form-control" value="Privado" readonly>
+                </div>
+                <button type="button" class="btn btn-primary" id="edit-user-preferences">Editar</button>
+            </form>
+        </div>
+        
+    <!-- Menu Inferior -->
+ <div class="bottom-menu d-flex justify-content-around bg-success">              
+    <a href="telainicial.html" class="menu-item text-light text-center">
+        <i class="bi bi-house-fill"></i><br>Início
+    </a>
+    <a href="transacoes.html" class="menu-item text-light text-center">
+        <i class="bi bi-file-earmark-text"></i><br>Transações
+    </a>
+    <a href="#" class="menu-item text-light text-center">
+        <i class="bi bi-plus-circle-fill"></i><br>Adicionar
+    </a>
+    <a href="planejamento.html" class="menu-item text-light text-center">
+        <i class="bi bi-bar-chart-line"></i><br>Planejamento
+    </a>
+    <a href="perfil.html" class="menu-item text-light text-center">
+        <i class="bi bi-person-circle"></i><br>Perfil
+    </a>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Assets/javascript.js/perfil.js"></script> <!-- Link para o JavaScript separado -->
+</body>
+</html>

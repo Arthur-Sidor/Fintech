@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Assets/css/login.css">
+</head>
+<body>
+    
+    <div class="login-content">
+        <h1 class="login-title">FINTECH <i class="fas fa-dollar-sign dollar-sign"></i></h1>
+        <form class="login-form" onsubmit="event.preventDefault(); login();">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" id="username" placeholder="Digite seu e-mail" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">Entrar</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="#" class="link" onclick="redefinirSenha()">Esqueceu a senha?</a>
+        </div>
+        <div class="text-center mt-4" onclick="criarConta()">
+            <p>Não tem uma conta? <a href="#" class="link">Crie uma agora</a></p>
+        </div>
+    </div>
+
+    <!-- Scripts para o funcionamento da página -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Assets/javascript.js/login.js"></script> <!-- Incluindo o arquivo de JavaScript -->
+</body>
+</html>
