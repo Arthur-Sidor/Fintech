@@ -17,24 +17,20 @@
             <h4>Informações Pessoais</h4>
             <form id="personal-info-form">
                 <div class="form-group">
-                    <label>Nome Completo:</label>
-                    <input type="text" class="form-control" name="nome" value="Arthur Silva" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Endereço Residencial:</label>
-                    <input type="text" class="form-control" name="endereco" value="Rua das Flores, 123" readonly>
+                    <label for="nome">Nome Completo:</label>
+                    <input title="nome completo" type="text" class="form-control" name="nome" value="Arthur Silva" readonly>
                 </div>
                 <div class="form-group">
                     <label>Número de Telefone:</label>
-                    <input type="text" class="form-control" name="telefone" value="(11) 91234-5678" readonly>
+                    <input title="telefone" type="text" class="form-control" name="telefone" value="(11) 91234-5678" readonly>
                 </div>
                 <div class="form-group">
-                    <label>E-mail:</label>
-                    <input type="email" class="form-control" name="email" value="arthur.silva@email.com" readonly>
+                    <label for="email">E-mail:</label>
+                    <input title="email" type="email" class="form-control" name="email" value="arthur.silva@email.com" readonly>
                 </div>
                 <div class="form-group">
-                    <label>Data de Nascimento:</label>
-                    <input type="date" class="form-control" name="dataNascimento" value="1995-06-15" readonly>
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input title="data de Nascimento" type="date" class="form-control" name="dataNascimento" value="1995-06-15" readonly>
                 </div>
                 <button type="button" class="btn btn-primary" id="edit-personal-info">Editar</button>
             </form>
@@ -56,19 +52,21 @@
             <form id="user-preferences-form">
                 <div class="form-group">
                     <label>Idioma Preferido:</label>
-                    <input type="text" class="form-control" value="Português" readonly>
+                    <input title="idioma" type="text" class="form-control" value="Português" readonly>
                 </div>
                 <div class="form-group">
                     <label>Notificações:</label>
-                    <input type="text" class="form-control" value="E-mail e SMS" readonly>
+                    <input title="Notificações" type="text" class="form-control" value="E-mail e SMS" readonly>
                 </div>
                 <div class="form-group">
                     <label>Preferências de Privacidade:</label>
-                    <input type="text" class="form-control" value="Privado" readonly>
+                    <input title="Preferências" type="text" class="form-control" value="Privado" readonly>
                 </div>
                 <button type="button" class="btn btn-primary" id="edit-user-preferences">Editar</button>
             </form>
         </div>
+
+        <button type="button" class="btn btn-secondary" id="logout" onclick="logout()">Sair do APP</button>
         
     <!-- Menu Inferior -->
  <div class="bottom-menu d-flex justify-content-around bg-success">              
@@ -90,6 +88,8 @@
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="Assets/javascript.js/perfil.js"></script> <!-- Link para o JavaScript separado -->
+    <script src="Assets/js/perfil.js"></script> <!-- Link para o JavaScript separado -->
+    <script src="../assets/js/telainicial.js"></script> 
+
 </body>
 </html>

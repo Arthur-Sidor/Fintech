@@ -26,6 +26,10 @@ span {
     color: #E0F7E7;
 }
 
+.form-cadastro {
+    max-width: 400px;
+}
+
 .cadastro-btn {
     color: white;
     background-color: #388E3C;

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 body {
     background-color: #000; /* Fundo preto */
     color: #fff; /* Texto branco */
@@ -8,6 +6,10 @@ body {
 
 .container-fluid {
     padding: 20px; /* Espaçamento interno */
+}
+
+h2 {
+    color: #28a745; /* Cor verde para o título */
 }
 
 .goal-definition {
@@ -36,35 +38,25 @@ body {
     background-color: #1c1c1c; /* Fundo escuro */
     border-radius: 1vmin;
 }
+
 .bottom-menu {
-    height: 65px;
-    /* Altura do menu */
-    background-color: #28a745;
-    /* Verde */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra para destaque */
+    height: 60px; /* Altura do menu */
+    position: fixed; /* Mantém o menu na parte inferior */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background-color: #28a745; /* Fundo verde */
+    display: flex; /* Flexbox para menu */
+    justify-content: space-around; /* Espaçamento entre itens */
 }
 
 .menu-item {
-    flex: 1;
-    /* Faz o item do menu ocupar espaço igual */
-    text-align: center;
-    /* Centraliza o texto */
-    font-size: 14px;
-    /* Tamanho da fonte */
+    flex: 1; /* Faz o item do menu ocupar espaço igual */
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
 }
 
 .menu-item i {
-    font-size: 24px;
-    /* Tamanho dos ícones */
-}
-
-.add-transaction-btn {
-    position: fixed;
-    bottom: 80px;
-    right: 30px;
-    background-color: #28a745;
-    /* Verde */
-    color: white;
-    border-radius: 50
+    font-size: 24px; /* Tamanho dos ícones */
 }

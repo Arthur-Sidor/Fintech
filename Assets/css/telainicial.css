@@ -80,26 +80,25 @@ body {
 }
 
 .bottom-menu {
-    height: 65px;
-    /* Altura do menu */
-    background-color: #28a745;
-    /* Verde */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra para destaque */
+    height: 60px; /* Altura do menu */
+    position: fixed; /* Mantém o menu na parte inferior */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background-color: #28a745; /* Fundo verde */
+    display: flex; /* Flexbox para menu */
+    justify-content: space-around; /* Espaçamento entre itens */
 }
 
 .menu-item {
-    flex: 1;
-    /* Faz o item do menu ocupar espaço igual */
-    text-align: center;
-    /* Centraliza o texto */
-    font-size: 14px;
-    /* Tamanho da fonte */
+    flex: 1; /* Faz o item do menu ocupar espaço igual */
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
 }
 
 .menu-item i {
-    font-size: 24px;
-    /* Tamanho dos ícones */
+    font-size: 24px; /* Tamanho dos ícones */
 }
 
 .add-transaction-btn {
@@ -114,4 +113,8 @@ body {
 
 .add {
     cursor: pointer;
+}
+
+.logout {
+    font-size: 2rem;
 }

@@ -34,6 +34,18 @@ function toggleCards() {
     toggleCardsBtn.innerText = isHidden ? '▲' : '▼';
 }
 
+function logout() {
+    // localStorage.removeItem('token'); // Caso tenha token em localStorage
+    // sessionStorage.removeItem('token'); // Caso tenha token em sessionStorage
+
+    // Opcional: Se quiser limpar tudo no armazenamento
+    // localStorage.clear();
+    // sessionStorage.clear();
+
+    // Redirecionar para a página de login ou qualquer outra página
+    window.location.href = 'login.html'; // Substitua pela URL desejada
+}
+
 // Navegar entre os módulos
 function navigateToModule(module) {
     switch (module) {

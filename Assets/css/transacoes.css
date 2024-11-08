@@ -36,6 +36,7 @@ body {
     background-color: #2c2c2c; /* Fundo escuro */
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Borda arredondada */
+    
 }
 
 .comparison {
@@ -73,3 +74,9 @@ body {
 .menu-item i {
     font-size: 24px; /* Tamanho dos ícones */
 }
+
+
+.transactions-list {
+    background-color: #1c1c1c;
+}
+

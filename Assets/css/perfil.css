@@ -1,0 +1,64 @@
+body {
+    background-color: #000; /* Preto */
+    color: #fff; /* Texto em branco */
+}
+
+h2, h4 {
+    color: #28a745; /* Verde */
+}
+
+.section {
+    background-color: #1a1a1a; /* Fundo mais escuro para as seções */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    margin: 5vmin 0vmin;
+}
+
+.bottom-menu {
+    height: 60px; /* Altura do menu */
+    position: fixed; /* Mantém o menu na parte inferior */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background-color: #28a745; /* Fundo verde */
+    display: flex; /* Flexbox para menu */
+    justify-content: space-around; /* Espaçamento entre itens */
+}
+
+.menu-item {
+    flex: 1; /* Faz o item do menu ocupar espaço igual */
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.menu-item i {
+    font-size: 24px; /* Tamanho dos ícones */
+}
+
+
+.add-dropdown {
+    position: absolute;
+    background-color: #28a745;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    z-index: 1000; /* Garante que fique acima dos outros elementos */
+}
+
+.add-dropdown a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.add-dropdown a:hover {
+    text-decoration: underline;
+}
