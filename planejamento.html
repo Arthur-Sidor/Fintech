@@ -4,62 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planejamento Financeiro</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="Assets/css/planejamento.css"> <!-- Link para o CSS separado -->
+    <link rel="stylesheet" href="Assets/css/planejamento.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container-fluid p-4">
-        <h2 class="text-center mb-4">Planejamento Financeiro</h2>
+    <div class="container-fluid p-5">
+        <h2 class="text-center mb-5">Planejamento Financeiro</h2>
 
-        <!-- Definição de Metas -->
-        <div class="goal-definition mb-4">
-            <h4>Definição de Metas</h4>
+        <!-- Definição de Planejamento -->
+        <div class="goal-definition mb-5 p-4">
+            <h4>Definição de Planejamento</h4>
             <form id="goal-form">
                 <div class="form-group">
-                    <label for="goal-name">Nome da Meta:</label>
-                    <input type="text" id="goal-name" class="form-control" placeholder="Ex: Economizar para viagem" required>
+                    <label for="goal-description">Descrição do Planejamento:</label>
+                    <input type="text" id="goal-description" class="form-control" placeholder="Ex: Economizar para viagem" required>
                 </div>
                 <div class="form-group">
-                    <label for="goal-amount">Valor da Meta:</label>
-                    <input type="number" id="goal-amount" class="form-control" placeholder="Valor em R$" required>
+                    <label for="goal-target-value">Valor Alvo:</label>
+                    <input type="number" id="goal-target-value" class="form-control" placeholder="Valor em R$" required>
                 </div>
-                <button type="submit" class="btn btn-success">Adicionar Meta</button>
+                <div class="form-group">
+                    <label for="goal-initial-value">Valor Inicial:</label>
+                    <input type="number" id="goal-initial-value" class="form-control" placeholder="Valor em R$" required>
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Data de Início:</label>
+                    <input type="date" id="start-date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-date">Data de Término:</label>
+                    <input type="date" id="end-date" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Adicionar Planejamento</button>
             </form>
         </div>
 
-        <!-- Metas e Progresso -->
-        <div id="goal-container" class="mb-4">
-            <h4>Suas metas</h4>
+        <!-- Planejamentos e Progresso -->
+        <div id="goal-container" class="mb-5">
+            <h4>Seus Planejamentos</h4>
             <div id="goals-list"></div>
         </div>
-
-        <!-- Gráfico de Desempenho -->
-        <div class="performance-chart mb-4">
-            <h4>Gráfico de Desempenho</h4>
-            <canvas id="performanceChart" width="400" height="200"></canvas>
-        </div>
-    </div>
-
+<!-- Gráfico de Desempenho -->
+<div class="performance-chart">
+    <h4>Desempenho Financeiro</h4>
+    <canvas id="performanceChart"></canvas>
+</div>
 
     <!-- Menu Inferior -->
-    <div class="bottom-menu d-flex justify-content-around flex-wrap">              
+    <div class="bottom-menu d-flex justify-content-around align-items-center">
         <a href="telainicial.html" class="menu-item text-light text-center">
             <i class="bi bi-house-fill"></i><br>Início
         </a>
         <a href="transacoes.html" class="menu-item text-light text-center">
             <i class="bi bi-file-earmark-text"></i><br>Transações
         </a>
-        <a href="planejamento.html" class="menu-item text-light text-center">
+        <a href="planejamento.html" class="menu-item text-light text-center active">
             <i class="bi bi-bar-chart-line"></i><br>Planejamento
         </a>
         <a href="perfil.html" class="menu-item text-light text-center">
             <i class="bi bi-person-circle"></i><br>Perfil
         </a>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="Assets/js/planejamento.js"> <!-- Link para o JavaScript separado -->
-    </script>
+    <script src="Assets/js/planejamento.js"></script>
 </body>
 </html>

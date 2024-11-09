@@ -1,62 +1,173 @@
+/* Corpo e Fonte */
 body {
-    background-color: #000; /* Fundo preto */
-    color: #fff; /* Texto branco */
+    background-color: #1e1e1e;
+    color: #fff;
     font-family: "Montserrat", sans-serif;
 }
 
-.container-fluid {
-    padding: 20px; /* Espaçamento interno */
-}
-
 h2 {
-    color: #28a745; /* Cor verde para o título */
+    color: #28a745;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
+/* Definição de Planejamento */
 .goal-definition {
-    padding: 2.5vmin; /* Espaçamento interno */
-    background-color: #2c2c2c; /* Fundo escuro */
-    border-radius: 1vmin;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
 }
 
+.goal-definition h4 {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+    border-radius: 8px;
+    border: 1px solid #333;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Botão */
+button {
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Planejamentos */
 #goals-list {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .goal-item {
-    margin: 1vmin 0;
-    padding: 3vmin; /* Espaçamento interno */
-    background-color: #1c1c1c; /* Fundo escuro */
-    border-radius: 8px; /* Cantos arredondados */
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+.goal-item h5 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.goal-item p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Barra de Progresso */
 .progress {
-    background-color: #2c2c2c; /* Fundo da barra de progresso */
+    background-color: #444;
+    border-radius: 8px;
 }
 
-.performance-chart {
-    padding: 2vmin; /* Espaçamento interno */
-    background-color: #1c1c1c; /* Fundo escuro */
-    border-radius: 1vmin;
+.progress-bar {
+    background-color: #28a745;
+    border-radius: 8px;
+}
+/* grafico */
+.performance-chart canvas {
+    max-width: 100%;
+    height: auto;
 }
 
+
+.performance-chart h4 {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Menu Inferior */
 .bottom-menu {
-    height: 60px; /* Altura do menu */
-    position: fixed; /* Mantém o menu na parte inferior */
-    bottom: 0; /* Alinha na parte inferior */
-    left: 0; /* Alinha à esquerda */
-    right: 0; /* Alinha à direita */
-    background-color: #28a745; /* Fundo verde */
-    display: flex; /* Flexbox para menu */
-    justify-content: space-around; /* Espaçamento entre itens */
+    height: 70px;
+    background-color: #28a745;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #1e1e1e;
 }
 
 .menu-item {
-    flex: 1; /* Faz o item do menu ocupar espaço igual */
-    text-align: center; /* Centraliza o texto */
-    color: #fff; /* Cor do texto */
-    font-size: 14px; /* Tamanho da fonte */
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    transition: background-color 0.3s;
 }
 
 .menu-item i {
-    font-size: 24px; /* Tamanho dos ícones */
+    font-size: 24px;
+}
+
+.menu-item:hover {
+    background-color: #218838;
+}
+
+.menu-item.active {
+    background-color: #218838;
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+    .goal-definition, .performance-chart {
+        padding: 15px;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .goal-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .goal-item h5 {
+        font-size: 18px;
+    }
+    .goal-item p {
+        font-size: 14px;
+    }
+    .bottom-menu {
+        height: 60px;
+        font-size: 12px;
+    }
+    .menu-item i {
+        font-size: 20px;
+    }
 }

@@ -1,81 +1,118 @@
-const goalForm = document.getElementById('goal-form');
-const goalsList = document.getElementById('goals-list');
-const performanceChartCtx = document.getElementById('performanceChart').getContext('2d');
+// Selecionando o formulário e o contêiner de planejamentos
+const goalForm = document.getElementById("goal-form");
+const goalContainer = document.getElementById("goals-list");
 
+// Array para armazenar os planejamentos
 let goals = [];
-let performanceData = {
-    labels: [],
+
+// Função para adicionar um planejamento
+function addGoal(event) {
+    event.preventDefault();
+
+    // Coletando os valores dos campos de entrada
+    const description = document.getElementById("goal-description").value;
+    const targetValue = parseFloat(document.getElementById("goal-target-value").value);
+    const initialValue = parseFloat(document.getElementById("goal-initial-value").value);
+    const startDate = document.getElementById("start-date").value;
+    const endDate = document.getElementById("end-date").value;
+
+    // Verificando se todos os campos estão preenchidos
+    if (!description || !targetValue || !initialValue || !startDate || !endDate) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    // Criando o objeto do planejamento
+    const newGoal = {
+        id: Date.now(),
+        description,
+        targetValue,
+        initialValue,
+        startDate,
+        endDate
+    };
+
+    // Adicionando o planejamento ao array e exibindo
+    goals.push(newGoal);
+    displayGoals();
+
+    // Limpando o formulário
+    goalForm.reset();
+}
+
+// Função para exibir os planejamentos na tela
+function displayGoals() {
+    goalContainer.innerHTML = "";
+
+    goals.forEach((goal) => {
+        // Criando o elemento do planejamento
+        const goalElement = document.createElement("div");
+        goalElement.classList.add("goal-item");
+        goalElement.innerHTML = `
+            <h5>${goal.description}</h5>
+            <p><strong>Valor Alvo:</strong> R$ ${goal.targetValue.toFixed(2)}</p>
+            <p><strong>Valor Inicial:</strong> R$ ${goal.initialValue.toFixed(2)}</p>
+            <p><strong>Data de Início:</strong> ${goal.startDate}</p>
+            <p><strong>Data de Término:</strong> ${goal.endDate}</p>
+            <button class="btn btn-danger" onclick="deleteGoal(${goal.id})">Excluir</button>
+        `;
+
+        // Adicionando o elemento ao contêiner
+        goalContainer.appendChild(goalElement);
+    });
+}
+
+// Função para excluir um planejamento pelo ID
+function deleteGoal(id) {
+    goals = goals.filter((goal) => goal.id !== id);
+    displayGoals();
+}
+
+// Adicionando evento de submissão ao formulário
+goalForm.addEventListener("submit", addGoal);
+// Dados estáticos para o gráfico
+const performanceData = {
+    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril'], // Meses
     datasets: [{
-        label: 'Despesas',
-        data: [],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        label: 'Receitas',
+        data: [2000, 2500, 2200, 2700], // Valores das receitas
+        backgroundColor: 'rgba(40, 167, 69, 0.7)', // Cor do gráfico
+        borderColor: 'rgba(40, 167, 69, 1)',
         borderWidth: 1
     }, {
-        label: 'Receitas',
-        data: [],
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
+        label: 'Despesas',
+        data: [1500, 2000, 1800, 2100], // Valores das despesas
+        backgroundColor: 'rgba(255, 99, 132, 0.7)', // Cor do gráfico
+        borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1
     }]
 };
 
-const performanceChart = new Chart(performanceChartCtx, {
-    type: 'bar',
+// Configuração do gráfico
+const config = {
+    type: 'bar', // Tipo de gráfico (barra)
     data: performanceData,
     options: {
+        responsive: true,
         scales: {
+            x: {
+                beginAtZero: true
+            },
             y: {
                 beginAtZero: true
             }
+        },
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                enabled: true
+            }
         }
     }
-});
+};
 
-// Adiciona uma meta
-goalForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const goalName = document.getElementById('goal-name').value;
-    const goalAmount = parseFloat(document.getElementById('goal-amount').value);
-    
-    const goal = {
-        name: goalName,
-        amount: goalAmount,
-        progress: 0
-    };
-    
-    goals.push(goal);
-    updateGoalsList();
-    goalForm.reset();
-});
-
-// Atualiza a lista de metas
-function updateGoalsList() {
-    goalsList.innerHTML = '';
-    
-    goals.forEach((goal, index) => {
-        const goalItem = document.createElement('div');
-        goalItem.className = 'goal-item';
-        goalItem.innerHTML = `
-            <h5>${goal.name}</h5>
-            <p>Meta: R$ ${goal.amount.toFixed(2)}</p>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: ${((goal.progress / goal.amount) * 100).toFixed(2)}%; background-color: #28a745;" aria-valuenow="${goal.progress}" aria-valuemin="0" aria-valuemax="${goal.amount}"></div>
-            </div>
-        `;
-        goalsList.appendChild(goalItem);
-    });
-    
-    // Atualiza o gráfico de desempenho
-    updatePerformanceChart();
-}
-
-// Atualiza o gráfico de desempenho
-function updatePerformanceChart() {
-    // Exemplo de dados fictícios para despesas e receitas
-    performanceData.labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril'];
-    performanceData.datasets[0].data = [1500, 2000, 1800, 2100]; // Despesas
-    performanceData.datasets[1].data = [2000, 2500, 2200, 2700]; // Receitas
-    performanceChart.update();
-}
+// Inicializando o gráfico
+const ctx = document.getElementById('performanceChart').getContext('2d');
+const performanceChart = new Chart(ctx, config);

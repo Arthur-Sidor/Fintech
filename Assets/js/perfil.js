@@ -1,7 +1,3 @@
-function navigateToModule(module) {
-    alert('Navegando para: ' + module);
-}
-
 function toggleAddMenu() {
     const dropdown = document.getElementById('addDropdown');
     dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';

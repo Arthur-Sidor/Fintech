@@ -34,6 +34,47 @@ function toggleCards() {
     toggleCardsBtn.innerText = isHidden ? '▲' : '▼';
 }
 
+// Função para alternar a visibilidade do pop-up de adicionar cartão
+function toggleAddCardPopup() {
+    const popup = document.getElementById('addCardPopup');
+    popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+}
+
+// Função para adicionar um novo cartão
+function addCard() {
+    const cardName = document.getElementById('cardName').value;
+    const cardLimit = document.getElementById('cardLimit').value;
+
+    if (cardName && cardLimit) {
+        // Criação do novo cartão dinamicamente
+        const cardContent = document.getElementById('cards-content');
+        const newCard = document.createElement('div');
+        newCard.className = 'card-item bg-success mb-2 p-3';
+        newCard.innerHTML = `
+            <div class="card-logo"></div>
+            <div class="card-info">
+                <strong>${cardName}</strong><br>
+                <span>Limite: R$ ${Number(cardLimit).toFixed(2)}</span>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="removeCard(this)">Excluir</button>
+        `;
+        cardContent.appendChild(newCard);
+
+        // Limpar campos e fechar o pop-up
+        document.getElementById('addCardForm').reset(); // Limpa o formulário
+        toggleAddCardPopup(); // Fecha o pop-up
+    } else {
+        alert("Por favor, preencha todos os campos.");
+    }
+}
+
+// Função para remover um cartão
+function removeCard(button) {
+    const card = button.parentElement;
+    card.remove();
+}
+
+// Função de logout (opcional, para remover itens do armazenamento)
 function logout() {
     // localStorage.removeItem('token'); // Caso tenha token em localStorage
     // sessionStorage.removeItem('token'); // Caso tenha token em sessionStorage
